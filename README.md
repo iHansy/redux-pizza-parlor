@@ -31,7 +31,7 @@ The tasks for Base Mode are broken down further [on this Trello Board](https://t
 
 After starting up the server, the following routes should be available. You can test them with Postman.
 
-### GET PIZZA  
+### GET PIZZA   
 
 `/api/pizza`
 

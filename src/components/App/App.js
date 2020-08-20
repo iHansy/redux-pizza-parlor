@@ -12,7 +12,8 @@ class App extends Component {
     return (
       <div className="App">
         <header className="App-header">
-          <h1 className="App-title">Prime Pizza</h1>
+
+          <h1 className="App-title">Mangiare La Pizza</h1>
           <h2>Cart Total:${this.props.reduxState.cartReducer.reduce((prev, cur) => {
             return prev + cur.price;
           }, 0)}</h2>
