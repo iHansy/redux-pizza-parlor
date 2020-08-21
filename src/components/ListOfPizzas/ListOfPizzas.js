@@ -64,8 +64,6 @@ class ListOfPizzas extends Component {
     render(){
         return(
             <>
-            // setup loop here 
-            <>
             {this.props.reduxState.pizzaListReducer.map((pizza, i) => {
                 return(
                     <div>
@@ -78,10 +76,7 @@ class ListOfPizzas extends Component {
                     </div>
                 );
             })}
-
-            
             </>
-
         )
     }
 }

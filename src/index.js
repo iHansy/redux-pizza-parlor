@@ -21,12 +21,10 @@ const cartReducer =(state = [], action) => {
     return state
 }
 
-const customerReducer = (state = {customer_name: 'Hans Accola', 
-street_address: '4773 Test Address Ave', 
-city: 'Minneapolis', 
-zip: 88743,
-type: 'Delivery'}, action) => {
-
+const customerReducer = (state = {}, action) => {
+    if ( action.type === 'SET_CUSTOMER') {
+        return action.payload
+    }
     return state
 }
 

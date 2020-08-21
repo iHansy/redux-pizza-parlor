@@ -6,8 +6,8 @@ import CustomerToCheckout from '../CustomerToCheckout/CustomerToCheckout';
 class Checkout extends Component {
 
     state = {
-        customer_name: this.props.customer.customer_name,
-        street_address: this.props.customer.street_address,
+        customer_name: this.props.customer.name,
+        street_address: this.props.customer.address,
         city: this.props.customer.city,
         zip: this.props.customer.zip,
         type: this.props.customer.type,
@@ -61,14 +61,14 @@ class Checkout extends Component {
         let totalCost = 0
         //looping over all items in cart to get total cost
         for (let i = 0; i < this.props.cart.length; i++) {
-            totalCost += this.props.cart[i].cost;
+            totalCost += this.props.cart[i].price;
         }
 
         return (
             <div>
                 <h3>Step 3: Checkout</h3>
-                <p>{this.props.customer.customer_name}</p>
-                <p>{this.props.customer.street_address}</p>
+                <p>{this.props.customer.name}</p>
+                <p>{this.props.customer.address}</p>
                 <p>{this.props.customer.city}</p>
                 <p>{this.props.customer.type}</p>
 
@@ -84,7 +84,7 @@ class Checkout extends Component {
                             return (
                                 <tr key={index}>
                                     <td>{item.name}</td>
-                                    <td>{item.cost}</td>
+                                    <td>{item.price}</td>
                                 </tr>
                             )
                         })}
