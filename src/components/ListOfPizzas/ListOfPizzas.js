@@ -8,12 +8,14 @@ import axios from 'axios';
 
 class ListOfPizzas extends Component {
 
+
     state = {
         pizzas: {
             name: '',
             price: 0
         }
     }
+
 
     componentDidMount() {
         console.log('woo')
@@ -61,6 +63,7 @@ class ListOfPizzas extends Component {
 
     render(){
         return(
+            <>
             // setup loop here 
             <>
             {this.props.reduxState.pizzaListReducer.map((pizza, i) => {
@@ -75,6 +78,8 @@ class ListOfPizzas extends Component {
                     </div>
                 );
             })}
+
+            
             </>
 
         )

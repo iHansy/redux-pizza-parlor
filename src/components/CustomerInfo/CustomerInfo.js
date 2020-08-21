@@ -22,7 +22,16 @@ class CustomerInfo extends Component {
         })
     }
 
-    
+    clickHandle = () => {
+        this.props.history.push("/checkout")
+    }
+
+    handleClick =() => {
+                console.log('handling clicks all day long');
+                //dispatch to index
+                this.props.dispatch({ type: 'SET_CUSTOMER', payload: this.state.newCustomer})
+                this.props.history.push("/checkout")//busted
+                        }
     
     render(){
         return (
@@ -37,12 +46,13 @@ class CustomerInfo extends Component {
                 />
                 <input required placeholder="City"
                 value={this.state.newCustomer.name}
-                onChange={(event) => this.handleChangeFor('City', event)}
+                onChange={(event) => this.handleChangeFor('city', event)}
                 />
                 <input required placeholder="Zip"
                 value={this.state.newCustomer.name}
-                onChange={(event) => this.handleChangeFor('Zip', event)}
+                onChange={(event) => this.handleChangeFor('zip', event)}
                 />
+
 
                 {/* <Link to="/checkout"> */}
                 {/*not sure of the right whack place to send it*/}
@@ -52,20 +62,12 @@ class CustomerInfo extends Component {
                 {/* </Link> */}
 
 
+
             </section>
 
         )
     }
 }
-
-
-
-
-
-
-
-
-
 
 
 const mapStateToProps = (reduxStore) => ({
