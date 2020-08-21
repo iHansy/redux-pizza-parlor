@@ -21,11 +21,18 @@ class ListOfPizzas extends Component {
             this.props.dispatch({ type: 'SET_PIZZAS', payload: response.data });
             
         }).catch((error) => {
-            console.log('error in GET pizza', error);
+            console.log('error in GET pizza', error); 
             
         })
     }
 
+    handleAddPizza = (event) => {
+        console.log('in handleAddPizza! ');
+        
+        axios.post('/api/pizza') // FINISH THIS!!!!!
+        
+        
+    }
 
     render(){
         return(
@@ -35,8 +42,11 @@ class ListOfPizzas extends Component {
                 return(
                     <div>
                         <h2>{pizza.name}</h2>
+                        <img src={pizza.image_path}/>
                         <p>{pizza.description}</p>
                         <p>{pizza.price}</p>
+                        <button >Add</button>
+                        <button>Remove</button>
                     </div>
                 );
             })}
