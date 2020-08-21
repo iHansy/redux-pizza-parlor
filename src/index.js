@@ -11,7 +11,11 @@ const cartReducer = (state = [{name: 'Big pizza', cost: 12.99}, {name: 'Small pi
     return state
 }
 
-const customerReducer = (state = {customer_name: 'Hans Accola', street_address: '4773 Test Address Ave', city: 'Minneapolis', type: 'Delivery'}, action) => {
+const customerReducer = (state = {customer_name: 'Hans Accola', 
+street_address: '4773 Test Address Ave', 
+city: 'Minneapolis', 
+zip: 88743,
+type: 'Delivery'}, action) => {
 
     return state
 }

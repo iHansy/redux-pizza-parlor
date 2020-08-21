@@ -5,57 +5,64 @@ import CustomerToCheckout from '../CustomerToCheckout/CustomerToCheckout';
 
 class Checkout extends Component {
 
+    state = {
+        customer_name: this.props.customer.customer_name,
+        street_address: this.props.customer.street_address,
+        city: this.props.customer.city,
+        zip: this.props.customer.zip,
+        type: this.props.customer.type,
+        total: 0
+    }
 
-    // componentDidMount() {
-    //     this.getCustomers();
-    // }
+    checkoutButton = () => {
+        // axios.post('/api/order', this.state)
+        //     .then((response) => {
+        //         //added new customer to database
+        //     })
+        // console.log(totalCost);
+        // this.getTotalCost();
+        // console.log(this.state);
+        let totalCost = 0
+        //looping over all items in cart to get total cost
+        for (let i = 0; i < this.props.cart.length; i++) {
+            totalCost += this.props.cart[i].cost;
+        }
+        this.setState({
+            total: totalCost
+        })
+        console.log(totalCost);
+        console.log(this.state);
+        // if statement in index for no payload or send empty array
 
-    // getCustomers = () => {
-    //     //request to database
-    //     axios({
-    //         method: 'GET',
-    //         url: '/api/order'
-    //     }).then((response) => {
-    //         console.log(response.data);
-    //         //response.data will be array of customer info
-    //         //sending dispatch to redux with response.data
-    //         this.props.dispatch({ type: 'SET_CUSTOMERS', payload: response.data })
-    //     }).catch((error) => {
-    //         console.log('error getting customer info', error);
-    //     })
-    // }
+    }
+
+    // let totalCost = 0
+    //     //looping over all items in cart to get total cost
+    //     for (let i = 0; i < this.props.cart.length; i++) {
+    //         totalCost += this.props.cart[i].cost;
+    //     }
+
+    getTotalCost = () => {
+        let totalCost = 0
+        //looping over all items in cart to get total cost
+        for (let i = 0; i < this.props.cart.length; i++) {
+            totalCost += this.props.cart[i].cost;
+        }
+        this.setState({
+            total: totalCost
+        })
+        console.log(totalCost);
+    }
+
 
 
     render() {
-        // let customerIndex = this.props.currentCustomer.length - 1
-        // console.log(customerIndex);
-        //console.logs can go here
-        // console.log(this.props.reduxStore.customerReducer[1].customer_name);
-        // console.log(this.props.currentCustomer[customerIndex])
-
-        // let customer = this.props.storeCustomers.length
-
-        // let customerPass = customer - 1
-
-        // console.log(this.props.storeCustomers.length - 1);
-        // let startingIndex = this.props.storeCustomers.length - 1
-        // console.log(startingIndex);
-
-        // for (let i = 3; i < this.props.storeCustomers.length; i++ ) {
-        //     console.log(i);
-        //     console.log(this.props.storeCustomers[i].customer_name);
-        // console.log(this.props.storeCustomers;
-        // console.log(this.props.storeCustomers[i].customer_name);
-        //double ampersand?
-
 
         let totalCost = 0
-        for (let i=0; i<this.props.cart.length; i++) {
+        //looping over all items in cart to get total cost
+        for (let i = 0; i < this.props.cart.length; i++) {
             totalCost += this.props.cart[i].cost;
-
         }
-
-
 
         return (
             <div>
@@ -68,13 +75,12 @@ class Checkout extends Component {
                 <table>
                     <thead>
                         <tr>
-                            <th>Name</th>
+                            <th>Pizza Type</th>
                             <th>Cost</th>
                         </tr>
                     </thead>
                     <tbody>
                         {this.props.cart.map((item, index) => {
-
                             return (
                                 <tr key={index}>
                                     <td>{item.name}</td>
@@ -84,9 +90,9 @@ class Checkout extends Component {
                         })}
                     </tbody>
                 </table>
-
                 <h4>Total Cost: ${totalCost}</h4>
-
+                <button onClick={this.checkoutButton}>Checkout</button>
+                {/* button navigation  */}
             </div>
 
 
