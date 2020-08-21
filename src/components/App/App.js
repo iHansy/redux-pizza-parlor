@@ -7,6 +7,7 @@ import { HashRouter as Router, Route, Link } from 'react-router-dom';
 import Checkout from '../Checkout/Checkout.jsx';
 import CustomerInfo from '../CustomerInfo/CustomerInfo.js'
 import AdminView from '../AdminView/AdminView'
+import ListOfPizzas from '../ListOfPizzas/ListOfPizzas'
 
 
 
@@ -22,21 +23,20 @@ class App extends Component {
         <header className="App-header">
 
           <h1 className="App-title">Mangiare La Pizza</h1>
-          <h2>Cart Total:${this.props.reduxState.cartReducer.reduce((prev, cur) => {
+          {/* <h2>Cart Total:${this.props.reduxState.cartReducer.reduce((prev, cur) => {
             return prev + cur.price;
-          }, 0)}</h2>
+          }, 0)}</h2> */}
         </header>
 
 
         <br />
-        
-          <Route path="/checkout" component={Checkout} />
-          <Route path="/customer_info" />
-          <Route path="/admin" component={AdminView} />
+          <Route exact path="/" component={ListOfPizzas} /> 
+          <Route exact path="/customer_info" component={CustomerInfo}/>
+          <Route exact path="/checkout" component={Checkout} />
+          <Route exact path="/admin" component={AdminView} />
         
 
         <p>Pizza is great.</p>
-        <CustomerInfo />
       </div>
       </Router>
     );

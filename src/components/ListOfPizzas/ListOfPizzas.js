@@ -1,11 +1,18 @@
 import React, { Component } from 'react';
 import { connect } from 'react-redux';
+import axios from 'axios';
+
 
 
 // Loop over pizzas with .map notation
 // only need one div 
 
 class ListOfPizzas extends Component {
+
+    componentDidMount() {
+        console.log('woo')
+        this.getPizza()
+    }
 
     // getting pizza data
     getPizza = () => {
@@ -23,6 +30,7 @@ class ListOfPizzas extends Component {
 
     render(){
         return(
+            <>
             // setup loop here 
             {this.props.reduxState.pizzaListReducer.map((pizza, i) => {
                 return(
@@ -33,7 +41,7 @@ class ListOfPizzas extends Component {
                 )
             })}
             
-
+            </>
         )
     }
 }
