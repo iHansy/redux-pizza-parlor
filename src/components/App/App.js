@@ -7,7 +7,7 @@ import CustomerInfo from '../CustomerInfo/CustomerInfo.js'
 import { connect } from 'react-redux';
 import { HashRouter as Router, Route, Link } from 'react-router-dom';
 import AdminView from '../AdminView/AdminView'
-
+import ListOfPizzas from '../ListOfPizzas/ListOfPizzas.js';
 
 
 
@@ -27,6 +27,7 @@ class App extends Component {
         <br />
         <img src="images/pizza_photo.png" />
         <Router>
+          <Route path="/" component={ListOfPizzas} />
           <Route path="/checkout" />
           <Route path="/customer_info" />
           <Route path="/admin" component={AdminView} />

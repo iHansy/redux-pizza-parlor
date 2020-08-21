@@ -13,10 +13,10 @@ const cartReducer =(state = [], action) => {
     return state
 }
 
-const customerReducer =(state, action) => {
+const customerReducer =(state = [], action) => {
     return state
 }
-const pizzaListReducer =(state, action) => {
+const pizzaListReducer =(state = [], action) => {
     if(action.type === 'SET_PIZZAS'){
         return action.payload;
     }
