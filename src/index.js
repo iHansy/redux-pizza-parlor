@@ -21,4 +21,15 @@ const pizzaListReducer =(state, action) => {
 }
 
 
-ReactDOM.render(<App />, document.getElementById('root'));
+
+const store = createStore(
+    combineReducers({
+        pizzaListReducer,
+        customerReducer,
+        cartReducer
+
+    }),
+    applyMiddleware(logger)
+)
+
+ReactDOM.render(<Provider store={store}><App /></Provider>, document.getElementById('root'));
