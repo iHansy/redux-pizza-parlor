@@ -30,9 +30,8 @@ class ListOfPizzas extends Component {
                         <h2>{pizza.name}</h2>
                         <p>{pizza.description}</p>
                         <p>{pizza.price}</p>
-
                     </div>
-                )
+                );
             })}
             
 
