@@ -1,6 +1,8 @@
 import React, { Component } from 'react';
 import {connect} from 'react-redux';
 import axios from 'axios';
+import { HashRouter as Router, Route, Link } from 'react-router-dom';
+
 
 class CustomerInfo extends Component {
     state ={
