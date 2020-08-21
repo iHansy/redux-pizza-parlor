@@ -1,19 +1,23 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import './App.css';
-
-import CustomerInfo from '../CustomerInfo/CustomerInfo.js'
-
 import { connect } from 'react-redux';
 import { HashRouter as Router, Route, Link } from 'react-router-dom';
+
+import Checkout from '../Checkout/Checkout.jsx';
+import CustomerInfo from '../CustomerInfo/CustomerInfo.js'
 import AdminView from '../AdminView/AdminView'
 
 
 
 
 class App extends Component {
+
+  
+
   render() {
     return (
+<Router>
       <div className="App">
         <header className="App-header">
 
@@ -25,16 +29,16 @@ class App extends Component {
 
 
         <br />
-        <img src="images/pizza_photo.png" />
-        <Router>
-          <Route path="/checkout" />
+        
+          <Route path="/checkout" component={Checkout} />
           <Route path="/customer_info" />
           <Route path="/admin" component={AdminView} />
-        </Router>
+        
 
         <p>Pizza is great.</p>
         <CustomerInfo />
       </div>
+      </Router>
     );
   }
 }
