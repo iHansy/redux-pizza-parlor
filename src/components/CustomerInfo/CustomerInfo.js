@@ -44,12 +44,12 @@ class CustomerInfo extends Component {
                 onChange={(event) => this.handleChangeFor('Zip', event)}
                 />
 
-                <Link to="/checkout">
+                {/* <Link to="/checkout"> */}
                 {/*not sure of the right whack place to send it*/}
                     <button type="submit">
                         Next
                     </button>
-                </Link>
+                {/* </Link> */}
 
 
             </section>
