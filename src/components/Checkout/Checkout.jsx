@@ -61,7 +61,7 @@ class Checkout extends Component {
         let totalCost = 0
         //looping over all items in cart to get total cost
         for (let i = 0; i < this.props.cart.length; i++) {
-            totalCost += this.props.cart[i].price;
+            totalCost += Number(this.props.cart[i].price);
         }
 
         return (

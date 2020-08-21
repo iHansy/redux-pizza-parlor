@@ -31,14 +31,15 @@ class CustomerInfo extends Component {
 
     deliveryClick = (event) => {
         console.log('delivery cuz im lazy');
-        this.setState({ newCustomer: {...this.newCustomer,
+        this.setState({ newCustomer: {...this.state.newCustomer,
             type: 'delivery'
         }}) 
+        console.log(this.state.newCustomer);
     }
 
     carryOutClick = (event) => {
         console.log('carry out');
-        this.setState({ newCustomer: {...this.newCustomer,
+        this.setState({ newCustomer: {...this.state.newCustomer,
             type: 'carryOut'
         }}) 
         //console.log('pickup because im on my way home from target');
