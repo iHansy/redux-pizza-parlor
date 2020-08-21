@@ -33,21 +33,16 @@ class ListOfPizzas extends Component {
         })
     }
 
-    handleAddPizza = (event) => {
-   
+    handleAddPizza = (pizza) => {
+        pizza.quantity = 1;
         
         console.log('in handleAddPizza! ');
         
         // axios.post('/api/pizza').then((response) => {
         //     this.getPizza();
-        this.props.dispatch({ type: 'ADD_PIZZA', payload: this.state.pizzas});
+        this.props.dispatch({ type: 'ADD_PIZZA', payload: pizza});
 
-        this.setState({
-            pizzas: {
-                name: event.target.value,
-                price: event.target.value
-            }
-        })
+        
     }
 
     handleRemovePizza = (event) => {
@@ -75,7 +70,7 @@ class ListOfPizzas extends Component {
                         <img src={pizza.image_path}/>
                         <p>{pizza.description}</p>
                         <p>{pizza.price}</p>
-                        <button onClick={this.handleAddPizza}>Add Pizza</button>
+                        <button onClick={() => this.handleAddPizza(pizza)}>Add Pizza</button>
                         <button onClick={this.handleRemovePizza}>Remove Pizza</button>
                     </div>
                 );
