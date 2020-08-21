@@ -2,26 +2,23 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import './index.css';
 import App from './components/App/App';
+import { createStore, combineReducers, applyMiddleware } from 'redux';
+import { Provider } from 'react-redux';
 import logger from 'redux-logger';
 
-//redux
-import {createStore, combineReducers, applyMiddleware} from 'redux';
-import { Provider } from 'react-redux'
 
-const pizzaListReducer =(state = [], action) => {
+
+//store all pizzas currently in cart
+const cartReducer =(state = [], action) => {
     return state
 }
 
-const customerReducer =(state = [], action) => {
+const customerReducer =(state, action) => {
     return state
 }
-
-const cartReducer =(state = [{price: 7.50}, {price: 6.3}], action) => {
+const pizzaListReducer =(state, action) => {
     return state
 }
-
-
-
 
 
 
