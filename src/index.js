@@ -11,7 +11,7 @@ const cartReducer = (state = [], action) => {
     return state
 }
 
-const customerReducer = (state = [], action) => {
+const customerReducer = (state = {}, action) => {
     if (action.type === 'SET_CUSTOMERS') {
         console.log(action.payload);
         return action.payload //adding customer info from DB to reducer with axios.get
@@ -19,7 +19,7 @@ const customerReducer = (state = [], action) => {
     return state
 }
 
-const pizzaListReducer =(state, action) => {
+const pizzaListReducer =(state = [], action) => {
     return state
 }
 
@@ -27,8 +27,7 @@ const store = createStore(
     combineReducers({
         pizzaListReducer,
         customerReducer,
-        cartReducer
-
+        cartReducer,
     }),
     applyMiddleware(logger)
 )

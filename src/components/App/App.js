@@ -5,11 +5,7 @@ import { connect } from 'react-redux';
 import { HashRouter as Router, Route, Link } from 'react-router-dom';
 
 import Checkout from '../Checkout/Checkout.jsx';
-
 import CustomerInfo from '../CustomerInfo/CustomerInfo.js'
-
-import { connect } from 'react-redux';
-import { HashRouter as Router, Route, Link } from 'react-router-dom';
 import AdminView from '../AdminView/AdminView'
 
 
