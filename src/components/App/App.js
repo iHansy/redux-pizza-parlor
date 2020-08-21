@@ -1,9 +1,13 @@
 import React, { Component } from 'react';
 import axios from 'axios';
 import './App.css';
+
+import CustomerInfo from '../CustomerInfo/CustomerInfo.js'
+
 import { connect } from 'react-redux';
 import { HashRouter as Router, Route, Link } from 'react-router-dom';
 import AdminView from '../AdminView/AdminView'
+
 
 
 
@@ -29,6 +33,7 @@ class App extends Component {
         </Router>
 
         <p>Pizza is great.</p>
+        <CustomerInfo />
       </div>
     );
   }
