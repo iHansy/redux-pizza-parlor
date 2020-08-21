@@ -10,6 +10,12 @@ import logger from 'redux-logger';
 
 //store all pizzas currently in cart
 const cartReducer =(state = [], action) => {
+    if (action.type === 'ADD_PIZZA'){
+        return [...state, action.payload];
+    }
+    else if (action.type === 'REMOVE_PIZZA'){
+        return state = [];
+    }
     return state
 }
 
@@ -20,7 +26,7 @@ const pizzaListReducer =(state = [], action) => {
     if(action.type === 'SET_PIZZAS'){
         return action.payload;
     }
-    return state
+    return state;
 }
 
 

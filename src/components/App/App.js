@@ -18,9 +18,9 @@ class App extends Component {
         <header className="App-header">
 
           <h1 className="App-title">Mangiare La Pizza</h1>
-          <h2>Cart Total:${this.props.reduxState.cartReducer.reduce((prev, cur) => {
-            return prev + cur.price;
-          }, 0)}</h2>
+          {/* <h2>Cart Total:${this.props.reduxState.cartReducer.reduce((prev, cur) => { */}
+            {/* return prev + cur.price;
+          }, 0)}</h2> */}
         </header>
 
 
