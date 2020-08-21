@@ -8,6 +8,7 @@ import { createStore, combineReducers, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 
 
+
 //store all pizzas currently in cart
 const cartReducer =(state = [], action) => {
     if (action.type === 'ADD_PIZZA'){
@@ -16,14 +17,16 @@ const cartReducer =(state = [], action) => {
     else if (action.type === 'REMOVE_PIZZA'){
         return state = [];
     }
+
     return state
 }
 
-const customerReducer = (state = {}, action) => {
-    if (action.type === 'SET_CUSTOMERS') {
-        console.log(action.payload);
-        return action.payload //adding customer info from DB to reducer with axios.get
-    }
+const customerReducer = (state = {customer_name: 'Hans Accola', 
+street_address: '4773 Test Address Ave', 
+city: 'Minneapolis', 
+zip: 88743,
+type: 'Delivery'}, action) => {
+
     return state
 }
 
