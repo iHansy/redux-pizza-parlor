@@ -7,15 +7,12 @@ import logger from 'redux-logger';
 import { createStore, combineReducers, applyMiddleware } from 'redux';
 import { Provider } from 'react-redux';
 
-const cartReducer = (state = [], action) => {
+const cartReducer = (state = [{name: 'Big pizza', cost: 12.99}, {name: 'Small pizzeria', cost: 9.77}, {name: 'Pineapple pizza', cost: 14.99}], action) => {
     return state
 }
 
-const customerReducer = (state = {}, action) => {
-    if (action.type === 'SET_CUSTOMERS') {
-        console.log(action.payload);
-        return action.payload //adding customer info from DB to reducer with axios.get
-    }
+const customerReducer = (state = {customer_name: 'Hans Accola', street_address: '4773 Test Address Ave', city: 'Minneapolis', type: 'Delivery'}, action) => {
+
     return state
 }
 

@@ -13,31 +13,28 @@ import AdminView from '../AdminView/AdminView'
 
 class App extends Component {
 
-  
+
 
   render() {
     return (
-<Router>
-      <div className="App">
-        <header className="App-header">
+      <Router>
+        <div className="App">
+          <header className="App-header">
 
-          <h1 className="App-title">Mangiare La Pizza</h1>
-          <h2>Cart Total:${this.props.reduxState.cartReducer.reduce((prev, cur) => {
-            return prev + cur.price;
-          }, 0)}</h2>
-        </header>
+            <h1 className="App-title">Mangiare La Pizza</h1>
+            <h2>Cart Total:${this.props.reduxState.cartReducer.reduce((prev, cur) => {
+              return prev + cur.price;
+            }, 0)}</h2>
+          </header>
 
 
-        <br />
-        
+          <br />
+
           <Route path="/checkout" component={Checkout} />
-          <Route path="/customer_info" />
+          <Route path="/customer_info" component={CustomerInfo} />
           <Route path="/admin" component={AdminView} />
-        
 
-        <p>Pizza is great.</p>
-        <CustomerInfo />
-      </div>
+        </div>
       </Router>
     );
   }

@@ -44,25 +44,60 @@ class Checkout extends Component {
         // for (let i = 3; i < this.props.storeCustomers.length; i++ ) {
         //     console.log(i);
         //     console.log(this.props.storeCustomers[i].customer_name);
-            // console.log(this.props.storeCustomers;
-            // console.log(this.props.storeCustomers[i].customer_name);
+        // console.log(this.props.storeCustomers;
+        // console.log(this.props.storeCustomers[i].customer_name);
+        //double ampersand?
 
-            //double ampersand?
+
+        let totalCost = 0
+        for (let i=0; i<this.props.cart.length; i++) {
+            totalCost += this.props.cart[i].cost;
+
+        }
 
 
-        
 
         return (
             <div>
                 <h3>Step 3: Checkout</h3>
+                <p>{this.props.customer.customer_name}</p>
+                <p>{this.props.customer.street_address}</p>
+                <p>{this.props.customer.city}</p>
+                <p>{this.props.customer.type}</p>
+
+                <table>
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Cost</th>
+                        </tr>
+                    </thead>
+                    <tbody>
+                        {this.props.cart.map((item, index) => {
+
+                            return (
+                                <tr key={index}>
+                                    <td>{item.name}</td>
+                                    <td>{item.cost}</td>
+                                </tr>
+                            )
+                        })}
+                    </tbody>
+                </table>
+
+                <h4>Total Cost: ${totalCost}</h4>
+
             </div>
+
+
         )
     }
 }
 
 const mapStateToProps = (reduxStore) => {
     return {
-        storeCustomers: reduxStore.customerReducer
+        customer: reduxStore.customerReducer,
+        cart: reduxStore.cartReducer
     }
 }
 
