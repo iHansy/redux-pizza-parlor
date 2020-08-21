@@ -28,10 +28,24 @@ const customerReducer = (state = {}, action) => {
 }
 
 const pizzaListReducer =(state = [], action) => {
+
+    if (action.type === 'SET_PIZZAS') {
+        return action.payload
+    }
+    return state
+}
+
+const orderReducer = (state=[], action) => {
+    if (action.type === 'SET_ORDER') {
+        return action.payload
+    }
+    return state
+
     if(action.type === 'SET_PIZZAS'){
         return action.payload;
     }
     return state;
+
 }
 
 const store = createStore(
@@ -39,6 +53,7 @@ const store = createStore(
         pizzaListReducer,
         customerReducer,
         cartReducer,
+        orderReducer
     }),
     applyMiddleware(logger)
 )

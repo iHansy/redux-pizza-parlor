@@ -3,7 +3,6 @@ import {connect} from 'react-redux';
 import axios from 'axios';
 import { HashRouter as Router, Route, Link } from 'react-router-dom';
 
-
 class CustomerInfo extends Component {
     state ={
         newCustomer: {
@@ -49,8 +48,6 @@ class CustomerInfo extends Component {
       //  }})
     }
 
-    
-    
     render(){
         return (
             <section>
@@ -71,35 +68,14 @@ class CustomerInfo extends Component {
                 onChange={(event) => this.handleChangeFor('zip', event)}
                 />
 
-                {/*<Link to="/checkout">
-                not sure of the right whack place to send it
-                    <button type="submit">
-                        Next
-                    </button>
-                </Link>*/}
-
-                
-
                 <button type="submit" onClick={this.handleClick}>Next</button>
                 <button onClick={this.deliveryClick}>Delivery</button>
                 <button onClick={this.carryOutClick}>Carry Out</button>
 
-
             </section>
-
         )
     }
 }
-
-
-
-
-
-
-
-
-
-
 
 const mapStateToProps = (reduxStore) => ({
     reduxStore
